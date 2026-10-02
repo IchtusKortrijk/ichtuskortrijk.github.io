@@ -1,21 +1,38 @@
-media: public/images
+media:
+  input: public/images
+  output: /images
+
 content:
-  - name: blog
-    label: "Blog Posts"
-    type: group
-    path: src/content/blog
-    format: frontmatter
-    view:
-      fields: [title, pubDate]
-      primary: title
-    items:
+  - name: pages
+    label: "Pages"
+    type: collection
+    path: src/content/pages
+    fields:
       - name: title
-        label: "Title"
+        label: "Page Title"
         type: string
         required: true
 
       - name: description
-        label: "Description"
+        label: "Meta Description"
+        type: string
+
+      - name: body
+        label: "Content"
+        type: rich-text
+
+  - name: blog
+    label: "Blog Posts"
+    type: collection
+    path: src/content/blog
+    fields:
+      - name: title
+        label: "Post Title"
+        type: string
+        required: true
+
+      - name: description
+        label: "Short Excerpt"
         type: string
 
       - name: pubDate
@@ -23,7 +40,7 @@ content:
         type: date
 
       - name: heroImage
-        label: "Hero Image"
+        label: "Cover Image"
         type: image
 
       - name: body
