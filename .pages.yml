@@ -1,0 +1,31 @@
+media: public/images
+content:
+  - name: blog
+    label: "Blog Posts"
+    type: collection
+    path: src/content/blog
+    format: frontmatter
+    view:
+      fields: [title, pubDate]
+      primary: title
+    fields:
+      - name: title
+        label: "Title"
+        type: string
+        required: true
+
+      - name: description
+        label: "Description"
+        type: string
+
+      - name: pubDate
+        label: "Publish Date"
+        type: date
+
+      - name: heroImage
+        label: "Hero Image"
+        type: image
+
+      - name: body
+        label: "Content"
+        type: rich-text
