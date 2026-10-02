@@ -2,13 +2,13 @@ media: public/images
 content:
   - name: blog
     label: "Blog Posts"
-    type: collection
+    type: group
     path: src/content/blog
     format: frontmatter
     view:
       fields: [title, pubDate]
       primary: title
-    fields:
+    items:
       - name: title
         label: "Title"
         type: string
